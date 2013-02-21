@@ -23,8 +23,6 @@
   $(function () {
 
     "use strict"; // jshint ;_;
-
-
     /* CSS TRANSITION SUPPORT (http://www.modernizr.com/)
      * ======================================================= */
 
@@ -726,8 +724,7 @@
             that.$element.appendTo(document.body) //don't move modals dom position
           }
 
-          that.$element
-            .show()
+          that.$element.show()
 
           if (transition) {
             that.$element[0].offsetWidth // force reflow
@@ -738,7 +735,11 @@
           transition ?
             that.$element.one($.support.transition.end, function () { that.$element.trigger('shown') }) :
             that.$element.trigger('shown')
-
+          var scroll_top = $(document).scrollTop();
+          var _height = $('body').height();
+          var _top1   = that.$element.offset().top;
+          var _top2   = scroll_top+_top1 > _height ? _top1 : scroll_top+_top1;
+          that.$element.css({top:_top2});
         })
       }
 
@@ -2292,7 +2293,6 @@ jQuery.cookie = function (key, value, options) {
     $.fn.extend({
         drag: function(){
             jObj = this;
-            jObj.css({'position':'fixed'});
             var pos = jObj.offset();
             jObj.dnX = pos.left;      //鼠标按下时的x坐标
             jObj.dnY = pos.top;       //鼠标按下时的y坐标
@@ -2303,21 +2303,20 @@ jQuery.cookie = function (key, value, options) {
             $(window).on('mouseup',   jObj.dragEnd);
             // alert(this);
             
-            jObj.find('span,label,:header').mousedown(function(evt){
+            jObj.find(':header').mousedown(function(evt){
                 evt.preventDefault();
             });
         },
-        
         dragDown: function(evt){
             // alert(_this.moved);
             jObj = $(this);           //些名非常重要,此表明了要拖拽对象,不至于被设置dragable的对象一起拖动
             // evt.preventDefault();
             // alert(jObj.attr('id'));
             var TN = evt.target.tagName;
-            if('INPUT'==TN || 'BUTTON'==TN || 'TEXT'==TN || 'A'==TN) {
-                jObj.moved = false; //bootstrap特殊处理
+            if(0 === TN.indexOf('H')) {
+                jObj.moved = true;  //只有<h>才拖动
             }else{
-                jObj.moved = true;
+                jObj.moved = false; //bootstrap特殊处理
             }
             
             jObj.msdnX = evt.clientX;  //鼠标按下时的位置
