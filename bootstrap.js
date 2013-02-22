@@ -1793,12 +1793,11 @@
 
 /***********************以下自定义插件***************************/
 //date panel
-
 !function($) {
-    // Picker object
+    // Picker object @element: 文本框
     var Datepicker = function(element, options){
         this.element = $(element);
-        this.format = DPGlobal.parseFormat(options.format||this.element.data('date-format')||'mm/dd/yyyy');
+        this.format = DPGlobal.parseFormat(options.format||this.element.data('date-format')||'yyyy-mm-dd');
         DPGlobal.template = DPGlobal.template.replace('{ctime}', DPGlobal.formatTime());
         this.picker = $(DPGlobal.template)
                             .appendTo('body')
@@ -1812,7 +1811,8 @@
         if (this.isInput) {
             this.element.on({
                 focus: $.proxy(this.show, this),
-                blur: $.proxy(this.hide, this),
+                click: $.proxy(this.show, this),
+                // blur: $.proxy(this.hide, this), //不支持ie
                 keyup: $.proxy(this.update, this)
             });
         } else {
@@ -1851,9 +1851,10 @@
                 e.stopPropagation();
                 e.preventDefault();
             }
-            if (!this.isInput) {
-                $(document).on('mousedown', $.proxy(this.hide, this));
-            }
+            // if (!this.isInput) {
+                // $(document).on('mousedown', $.proxy(this.hide, this));
+            // }
+            $(document).on('click', $.proxy(this.hide, this));
             this.element.trigger({
                 type: 'show',
                 date: this.date
@@ -2078,8 +2079,8 @@
         }
     };
     
-    $.fn.datepicker = function ( option ) {
-        return this.each(function () {
+    $.fn.datepicker = function(option) {
+        return this.each(function(){
             var $this = $(this),
                 data = $this.data('datepicker'),
                 options = typeof option == 'object' && option;
@@ -2204,7 +2205,8 @@
                         '</thead>',
         contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>'
     };
-    DPGlobal.template = '<div class="datepicker">'+
+    DPGlobal.headTemplate = DPGlobal.headTemplate.replace('{ctime}', DPGlobal.formatTime());
+    DPGlobal.template = '<div class="datepicker" style="width:280px;">'+
                             '<div class="datepicker-days">'+
                                 '<table>'+
                                     DPGlobal.headTemplate+
@@ -2224,9 +2226,9 @@
                                 '</table>'+
                             '</div>'+
                         '</div>';
-    DPGlobal.template = DPGlobal.template.replace('{ctime}', DPGlobal.formatTime());
+    // DPGlobal.template = DPGlobal.template.replace('{ctime}', DPGlobal.formatTime());
 
-}( window.jQuery );
+}(window.jQuery);
 
 jQuery.cookie = function (key, value, options) {
   if (arguments.length > 1 && String(value) !== "[object Object]") {

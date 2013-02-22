@@ -5052,6 +5052,7 @@ a.badge:hover {
 .datepicker table { width: 100%; margin: 0; }
 .datepicker td,
 .datepicker th { text-align: center; width: 20px; height: 20px; border-radius: 2px; padding: 5px 8px 3px 8px; }
+.datepicker td.day{cursor: pointer; }
 .datepicker td.day:hover { background: #eeeeee; cursor: pointer; }
 .datepicker td.old,
 .datepicker td.new { color: #999999; }
