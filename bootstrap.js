@@ -2322,7 +2322,11 @@ jQuery.cookie = function (key, value, options) {
             var ac   = 'undefined'==typeof(opts['ac']) ? true : opts['ac']; //auto close
             if(!ac) opts['butx'] = true;
             var butX = opts['butx'] ? "<button class='close' data-dismiss='alert' type='butto'>×</button>" : '';
-            var html = "<div id='__id' style='padding:8px;' class='alert alert-success' >__close<h4>__msg<h4></div>".replace('__id',id).replace('__close',butX).replace('__msg',msg);
+            var __cls = opts['cls'] || 'alert-success';
+            var html = '<div id="__id" class="alert __cls" style="white-space:nowrap;">\
+                          __close\
+                          <h4>__msg</h4>\
+                        </div>'.replace('__id',id).replace('__close',butX).replace('__msg',msg).replace('__cls',__cls);
             var top  = $('body').height()/4 + document.body.scrollTop+80;
             // alert(top)
             var self = $('body').append(html).find('#'+id);
@@ -2342,12 +2346,14 @@ jQuery.cookie = function (key, value, options) {
         },
         showAlterBox: function(opts){
             opts = opts || {}
-            opts['ac'] = false; //自动关闭
+            opts['ac']  = true; //自动关闭
+            opts['cls'] = 'alert-info';
             this.popBox(opts);
         },
         showConfirmBox: function(opts){
             opts = opts || {};
             opts['ac'] = false; //自动关闭
+            opts['cls'] = 'alert-error';
             this.popBox(opts);
         }
     });
