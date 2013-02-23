@@ -1854,7 +1854,7 @@
             // if (!this.isInput) {
                 // $(document).on('mousedown', $.proxy(this.hide, this));
             // }
-            $(document).on('click', $.proxy(this.hide, this));
+            // $(document).on('click', $.proxy(this.hide, this));
             this.element.trigger({
                 type: 'show',
                 date: this.date

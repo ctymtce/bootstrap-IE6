@@ -168,6 +168,18 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
+
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both;
+}
 .hide {
   display: none;
 }
@@ -619,19 +631,58 @@ input[type="color"]:focus,
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
-/*****navbar******/
-.nav {
-  margin: 0;
-  list-style: none;
+
+.fluid-left {
+    float: left;
+    padding: 9px 10px 11px;
+    color: #fff;
+    text-align:center;
 }
-.nav-list {
+
+/*****navbar******/
+.nav {/*UL*/
+    margin: 0;
+    list-style: none;
+}
+.fixed-top {
+    position: fixed; _position: static;
+    background: #333;
+    right: 0;
+    left: 0;
+    top:0;
+    z-index: 1030;
+    margin: 0;
+    padding:0;
+    overflow:hidden;
+    opacity:0.9;filter:alpha(opacity=90);
+}
+
+
+.nav-bar {/*UL*/
+    display: block;
+    margin-left: 60px;
+    min-width: 500px;
+}
+.nav-bar li{
+    display: block;
+      float: left;
+}
+.nav-bar li a{
+    display: inline-block;
+    padding: 9px 10px 11px;
+}
+.nav-bar li a:hover{
+    background: #555;
+    color: #ff0;
+}
+
+.nav-list {/*UL*/
   padding: 15px;
   margin: 0;
 }
 .nav-list li{
   display: block;
   background:none;
-
 }
 .nav-list .nav-header {
   margin-right: -15px;
@@ -665,31 +716,9 @@ input[type="color"]:focus,
   border-bottom: 1px solid #ffffff;
 }
 
-.navbartop {
-    position: fixed; _position: static;
-    background: #333;
-    right: 0;
-    left: 0;
-    top:0;
-    z-index: 1030;
-    margin-bottom: 0;
-    overflow:hidden;
-    opacity:0.9;filter:alpha(opacity=90);
-}
-.navbartop li{
-    display: block;
-      float: left;
-}
-.navbartop li a{
-    display: inline-block;
-    padding: 9px 10px 11px;
-}
-.navbartop li a:hover{
-    background: #555;
-    color: #ff0;
-}
 
-/*****bradge******/
+
+/*****label/bradge******/
 .label,
 .badge {
   font-size: 10.998px;
@@ -1318,13 +1347,13 @@ table {
 }
 
 /* Datepicker */
-.datepicker { z-index: 2000; float: left; list-style: none; background-color: #ffffff; border: solid 1px #ccc; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); top: 0; left: 0; padding: 4px; margin: 2px 0 0 0; border-radius: 2px; min-width: 160px; display: none; position:absolute; }
+.datepicker { z-index: 2000; float: left; list-style: none; background-color: #ffffff; border: solid 1px #ccc; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); top: 0; left: 0; padding: 4px; margin: 2px 0 0 0; border-radius: 2px; min-width: 160px; display: none; position:absolute; background-color:#fafafa;}
 .datepicker > div { display: none; }
 .datepicker table { width: 100%; margin: 0; }
 .datepicker td,
 .datepicker th { text-align: center; width: 20px; height: 20px; border-radius: 2px; padding: 5px 8px 3px 8px; }
 .datepicker td.day{cursor: pointer; }
-.datepicker td.day:hover { background: #eeeeee; cursor: pointer; }
+.datepicker td.day:hover { background: #ccc; cursor: pointer; }
 .datepicker td.old,
 .datepicker td.new { color: #999999; }
 .datepicker td.active,
