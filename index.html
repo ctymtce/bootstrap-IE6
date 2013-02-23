@@ -15,6 +15,7 @@
 </script>
 <style>
 body{ margin:60px 26px; _margin:4px 26px;}
+table td{white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -49,8 +50,14 @@ body{ margin:60px 26px; _margin:4px 26px;}
 
     <h3>文本框</h3>
     <div>
+    <input type='button' value="默认button" class="btn btn-info" /> 默认button<br/>
     <input type='text' /> 默认<br/>
     <input class="span3" type="email" placeholder="test@example.com" required="" /> 
+    <input type="text" class="box1" /> 
+    <input type="text" class="box2" /> 
+    <input type="checkbox"  /> 
+    <input type="radio"  /> 
+
     </div>
     
     <hr/><h3>日历</h3>
@@ -84,7 +91,7 @@ body{ margin:60px 26px; _margin:4px 26px;}
     </div>
     
     <h3>Badges</h3>
-    <div>
+    <div style="padding:14px;">
         <span class="badge">1</span>
         <span class="badge badge-success">2</span>
         <span class="badge badge-warning">3</span>
@@ -93,7 +100,7 @@ body{ margin:60px 26px; _margin:4px 26px;}
         <span class="badge badge-inverse">10</span>
     </div>
     
-    <table width='60%' cellpadding='10px'>
+    <table class="table table-bordered" width='60%' cellpadding='10px'>
     <tr>
     <td><h3>提示框</h3></td> <td><h3>提示框(JS)</h3></td> <td><h3>对话框</h3></td> <td><h3>列表</h3></td> <td><h3>进度条</h3></td></tr>
     </tr>
