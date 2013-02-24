@@ -1044,6 +1044,16 @@ table {
      -moz-border-radius: 15px;
           border-radius: 15px;
 }
+.pager span.active, .pager a.active, .pager a.active:hover {
+    display: inline-block;
+    border-radius: 15px;
+    padding: 5px 14px;
+    background: #cc1555;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid #dcdfda;
+    border-right: 1px solid #eee;
+}
 .pager a:hover {
   text-decoration: none;
   background-color: #f5f5f5;
