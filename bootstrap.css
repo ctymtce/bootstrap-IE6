@@ -551,7 +551,7 @@ select, select option{
     padding: 4px; font-size: 13px; outline:none;
 }
 select option{
-    zoom:1.4; height:20px; font-size:16px;
+    zoom:1.4;
 }
 textarea,
 input[type="text"],
