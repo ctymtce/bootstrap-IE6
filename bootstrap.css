@@ -1159,7 +1159,9 @@ table {
   padding: 15px;
   overflow-y: auto;
 }
-
+.modal-body th{
+  white-space:nowrap;
+}
 .modal-form {
   margin-bottom: 0;
 }
