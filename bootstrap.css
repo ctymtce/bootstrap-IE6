@@ -547,7 +547,12 @@ label {
   display: inline-block;
   margin-bottom: 0px;
 }
-
+select, select option{
+    padding: 3px; font-size: 13px; outline:none;
+}
+select option{
+    zoom:1.2;
+}
 textarea,
 input[type="text"],
 input[type="password"],
