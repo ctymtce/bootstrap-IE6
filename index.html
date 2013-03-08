@@ -10,6 +10,9 @@
 ;(function($){
     $(document).ready(function(){
         $('input[js="datepicker"]').datepicker({format:"yyyy-mm-dd"});
+        $('[but-trigger]').click(function(){
+            alert(111);
+        });
     });
 })(jQuery);
 </script>
@@ -31,6 +34,7 @@ table td{white-space:nowrap;}
             <a href="javascript:;">退出</a>
         </div>
     </div>
+
     <!--
     <div class="fixed-top clearfix">
         <div class='fluid-left'>
@@ -46,6 +50,7 @@ table td{white-space:nowrap;}
             
         </div>
     </div> -->
+
 
     <h3>按钮</h3>
     <table cellpadding='10px'>
@@ -63,7 +68,9 @@ table td{white-space:nowrap;}
     <p><a href='javascript:;' class='btn' disabled>确定</a>          btn[disabled]      </p>
     </td>
     </table>
-
+    
+    <a but-trigger="targetid1">aaaaaa</a>
+    <a but-trigger="targetid2">bbbbbb</a>
 
     <h3>文本框</h3>
     <div>
