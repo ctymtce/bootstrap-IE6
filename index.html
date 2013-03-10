@@ -22,18 +22,36 @@ table td{white-space:nowrap;}
 </style>
 </head>
 <body>
+    
     <div class="fixed-top">
-        <div class='fluid-left'>标题
+        <div class='fluid-left-auto'>
+            <span style="display:block;padding:10px;">标题</span>
         </div>
-        <ul class="nav nav-bar clearfix" >
-            <li class="active"><a href="javascript:;">首页</a></li>
-            <li><a href="javascript:;" >关于</a></li>
-            <li><a href="javascript:;" >菜单</a></li>
-            <li><a href="javascript:;">退出</a></li>
-        </ul>
+        <div class="fluid-middle-auto" >
+            <a href="javascript:;">首页</a>
+            <a href="javascript:;">关于</a>
+            <a href="javascript:;">菜单</a>
+            <a href="javascript:;">退出</a>
+        </div>
     </div>
-    
-    
+
+    <!--
+    <div class="fixed-top clearfix">
+        <div class='fluid-left'>
+            <span style="display:block;padding:10px;">标题</span>
+        </div>
+        <div class="fluid-middle" >
+            <a href="javascript:;">首页</a>
+            <a href="javascript:;">关于</a>
+            <a href="javascript:;">菜单</a>
+            <a href="javascript:;">退出</a>
+        </div>
+        <div class="fluid-right" >
+            
+        </div>
+    </div> -->
+
+
     <h3>按钮</h3>
     <table cellpadding='10px'>
     <tr><td>
@@ -132,9 +150,9 @@ table td{white-space:nowrap;}
     
     <div>
         <!--消息提示2-->
-        <a href="javascript:;" class="btn btn-primary" onclick="$.showFlashBox()">flashbox</a> <br/>
-        <a href="javascript:;" class="btn btn-danger" onclick="$.showAlterBox()">alterbox</a> <br/>
-        <a href="javascript:;" class="btn btn-warning" onclick="$.showConfirmBox()">ConfirmBox</a> <br/>
+        <p><a href="javascript:;" class="btn btn-primary" onclick="$.showFlashBox()">flashbox</a>    </p>
+        <p><a href="javascript:;" class="btn btn-danger" onclick="$.showAlterBox()">alterbox</a>     </p>
+        <p><a href="javascript:;" class="btn btn-warning" onclick="$.showConfirmBox()">ConfirmBox</a></p>
     </div>
     
     </td><td>
