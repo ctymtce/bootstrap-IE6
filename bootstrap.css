@@ -1136,7 +1136,7 @@ table {
      -moz-background-clip: padding-box;
           background-clip: padding-box;
 }
-
+.modal form{margin:0;padding:0;}
 .modal.fade {
   top: -25%;
   -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
