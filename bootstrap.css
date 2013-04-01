@@ -547,8 +547,9 @@ label {
   display: inline-block;
   margin-bottom: 0px;
 }
-select, select option{
-    padding: 3px; font-size: 13px; outline:none;
+select{
+    padding:3px;
+    font-size: 13px; outline:none;
 }
 select option{
     zoom:1.2;
@@ -732,8 +733,8 @@ input[type="color"]:focus,
   background:none;
 }
 .nav-list .nav-header {
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -4px;
+  margin-left: -4px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
