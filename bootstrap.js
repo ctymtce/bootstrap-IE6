@@ -1812,8 +1812,8 @@
             this.element.on({
                 focus: $.proxy(this.show, this),
                 click: $.proxy(this.show, this),
-                // blur: $.proxy(this.hide, this), //不支持ie
-                keyup: $.proxy(this.update, this)
+                keyup: $.proxy(this.update, this),
+                 blur: (!document.all && $.proxy(this.hide, this)) //不支持ie
             });
         } else {
             if (this.component){
